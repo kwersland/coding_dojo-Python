@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/bootstrap.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <!-- FORM -->
+        <div class="d-flex justify-content-center row">
+            <form class="d-flex flex-column col-4 bg-light" action="/process" method="POST">
+                
+                <!-- Header -->
+                <h1 class="m-3">Dojo Survey</h1>
+
+                <!-- Questions -->
+                <div>
+                    <label class="form-label" for="name">Name:</label>
+                    <input class="mb-3 form-control" type="text" name="name">
+                </div>
+                <div>
+                    <label class="form-label" for="location">Location:</label>
+                    <select class="mb-3 form-control" name="location" id="location">
+                        <option value="-">-</option>
+                        <option value="San Jose">San Jose</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Portland">Portland</option>
+                        <option value="Orange County">Orange County</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label" for="langauge">Favorite Language:</label>
+                    <select class="mb-3 form-control" name="language" id="language">
+                        <option value="-">-</option>
+                        <option value="Python">Python</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="C++">C++</option>
+                        <option value="MERN">MERN</option>
+                        <option value="Java">Java</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="col-1 form-label" for="comment">Comment:</label>
+                    <input class="mb-3 pb-3 form-control" type="text" name="comment">
+                </div>
+
+                <!-- Button -->
+                <button class="mb-3 btn btn-dark">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
