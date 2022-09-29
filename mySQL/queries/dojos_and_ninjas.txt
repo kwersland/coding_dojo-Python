@@ -1,0 +1,28 @@
+INSERT INTO dojos(name, created_at, updated_at) VALUES ('The White Dragon', NOW(), NOW());
+INSERT INTO dojos(name, created_at, updated_at) VALUES ('Sour Bonsai', NOW(), NOW());
+INSERT INTO dojos(name, created_at, updated_at) VALUES ('Black Belt Academy', NOW(), NOW());
+
+DELETE FROM dojos WHERE id = 1;
+DELETE FROM dojos WHERE id = 2;
+DELETE FROM dojos WHERE id = 3;
+
+INSERT INTO ninjas(first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ('Jack', 'Black', 35, NOW(), NOW(), 6);
+INSERT INTO ninjas(first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ('Timmy', 'Tuner', 14, NOW(), NOW(), 6);
+INSERT INTO ninjas(first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ('Michael', 'Angelo', 28, NOW(), NOW(), 6);
+
+INSERT INTO ninjas(first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ('Jack', 'Black', 35, NOW(), NOW(), 6);
+INSERT INTO ninjas(first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ('Timmy', 'Tuner', 14, NOW(), NOW(), 6);
+INSERT INTO ninjas(first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ('Michael', 'Angelo', 28, NOW(), NOW(), 6);
+
+INSERT INTO ninjas(first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ('Justin', 'Case', 32, NOW(), NOW(), 7);
+INSERT INTO ninjas(first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ('Marty', 'Mayhem', 55, NOW(), NOW(), 7);
+INSERT INTO ninjas(first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ('Peter', 'Parker', 22, NOW(), NOW(), 7);
+
+INSERT INTO ninjas(first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ('Michael', 'Scott', 38, NOW(), NOW(), 8);
+INSERT INTO ninjas(first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ('Dwight', 'Schrute', 34, NOW(), NOW(), 8);
+INSERT INTO ninjas(first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ('Jim', 'Halpert', 31, NOW(), NOW(), 8);
+
+SELECT * FROM ninjas WHERE dojo_id = 6;
+SELECT * FROM ninjas WHERE dojo_id = 8;
+
+SELECT * FROM dojos WHERE id = (SELECT dojo_id FROM ninjas WHERE id = 9);
