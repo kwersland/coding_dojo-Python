@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/bootstrap.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome {{user.first_name}}</h1>
+            <a class="btn btn-danger" href="/welcome">Back to Recipes</a>
+            <a class="btn btn-primary" href="/logout">Logout</a>
+        </header>
+        <main class="container">
+            <div>
+                <h1>{{recipe.name}}</h1>
+                <h4>Posted by: {{recipe.first_name}}</h4>
+            </div>
+            <div>
+                <div class="d-flex justify-content-evenly">
+                    <p>Description:</p>
+                    <p>{{recipe.description}}</p>
+                </div>
+                <div class="d-flex justify-content-evenly">
+                    <p>Under 30 minutes?</p>
+                    <p>
+                    {% if recipe.under_30 == 0 %}
+                        Yes
+                    {% else %}
+                        No
+                    {% endif %}</p>
+                </div>
+                <div class="d-flex justify-content-evenly">
+                    <p>Instructions:</p>
+                    <p>{{recipe.instructions}}</p>
+                </div>
+                <div class="d-flex justify-content-evenly">
+                    <p>Date Made:</p>
+                    <p>{{recipe.created_at}}</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>

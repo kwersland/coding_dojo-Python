@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/bootstrap.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex">
+            <h1>Add a New Recipe</h1>
+            <a class="btn btn-danger" href="/welcome">Back to Recipes</a>
+            <a class="btn btn-primary" href="/logout">Logout</a>
+        </div>
+        <form class="form d-flex" action="/recipes/new" method="POST">
+            <div>
+                <p class="form-label">Name:</p>
+                <input class="form-control" type="text" name="name">
+                <p class="form-label">Description:</p>
+                <input class="form-control" type="text" name="description">
+                <p class="form-label">Instructions:</p>
+                <input class="form-control" type="text" name="instructions">
+            </div>
+            <div class="d-flex flex-column">
+                <label class="form-label" for="date_made">Date Cooked/Made:</label>
+                <input class="form-control" type="date" name="created_at" id="date_made">
+                <label name="under_30">Under 30 Minutes?</label>
+                <input type="radio" name="under_30" id="0" value="0">
+                <input type="radio" name="under_30" id="1" value="1">
+                <input type="hidden" name="user_id" value="{{session['user_id']}}">
+                <button class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>

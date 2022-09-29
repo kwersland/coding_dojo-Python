@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/bootstrap.css') }}">
+</head>
+<style>
+    .body {
+        width: 800px;
+    }
+</style>
+<body>
+    <div class="body container m-auto p-5">
+
+        <!-- FORM Response -->
+        <div class="d-flex flex-column justify-content-center bg-light m-3 p-3">
+            
+            <!-- Header -->
+            <h1 class="bg-light">Survey Results</h1>
+
+            <!-- Responses -->
+            <table>
+                <tbody class="row">
+                    <tr class="d-flex justify-content-between">
+                        <td><h4>Name:</h4></td>
+                        <td><h4>{{name}}</h4></td>
+                    </tr>
+                    <tr class="d-flex justify-content-between">
+                        <td><h4>Location:</h4></td>
+                        <td><h4>{{location}}</h4></td>
+                    </tr>
+                    <tr class="d-flex justify-content-between">
+                        <td><h4>Language:</h4></td>
+                        <td><h4>{{language}}</h4></td>
+                    </tr>
+                    <tr class="d-flex justify-content-between">
+                        <td><h4>Comment:</h4></td>
+                        <td><h4>{{comment}}</h4></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Go back button -->
+            <form class="row d-flex justify-content-end"action="/restart" method="POST">
+                <button class="col-3 btn btn-dark m-3">Go Back</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
